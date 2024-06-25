@@ -1,6 +1,6 @@
 import scala.io.StdIn, scala.io.Source
 
-object FileAnalysis {
+object FileAnalysis_JK {
   def main(args: Array[String]): Unit = {
 
     val filepath = "C:\\Users\\Administrator\\IdeaProjects\\file1\\src\\main\\scala\\file.txt"
@@ -17,6 +17,13 @@ object FileAnalysis {
 
     wordCount.take(10).foreach{case (word,count) => println(s"$word: $count")}
 
+
+    // average word length:
+    val totalWords = words.length
+    val totalChars = words.map(_.length).sum
+    val avgWordLength = if (totalWords > 0) totalChars.toDouble/ totalWords else 0.0
+
+    println(f"$avgWordLength%.2f")
 
   }
 }
